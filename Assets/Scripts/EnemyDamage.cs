@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -14,13 +15,27 @@ public class EnemyDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(weapon.Attacking);
+
     }
 
-    private void OnCollisionEnter(Collision target)
+    private void TriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Weapon"))
+        {
+            Debug.Log("bbb");
+            if (weapon.Attacking == true)
+            {
+                Debug.Log("aaa");
+            }
+        }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D target)
     {
         if (target.gameObject.tag.Equals("Weapon"))
         {
+            Debug.Log("bbb");
             if (weapon.Attacking == true)
             {
                 Debug.Log("aaa");

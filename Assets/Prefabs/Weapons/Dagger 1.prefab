@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1883275680827732919}
   m_Layer: 0
   m_Name: Dagger 1
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63153ee273677d443bf4217ce598b64d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromPlayer: 0.3
+  distanceFromPlayer: 2
   Player: {fileID: 0}
   elapsedtime: 0
   Attacking: 0
@@ -146,7 +146,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

@@ -5,10 +5,10 @@ using UnityEngine.Rendering;
 
 public class TimeManagement : MonoBehaviour
 {
-    public float startingTime = 60f;
+    public float startingTime = 600f;
     public TextMeshProUGUI TimeText;
     float elapsedtime;
-    private float timeLeft;
+    public float timeLeft;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

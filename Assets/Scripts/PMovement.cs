@@ -52,8 +52,6 @@ public class PMovement : MonoBehaviour
             MoveSpeed = 7;
      
         }
-
-      
         
             if (Input.GetKey(KeyCode.W))
             {

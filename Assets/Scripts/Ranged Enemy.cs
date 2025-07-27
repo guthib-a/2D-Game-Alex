@@ -39,7 +39,7 @@ public class RangedEnemy : MonoBehaviour
         }
         else
         {
-            TimeBetweenShots = Time.deltaTime;
+            TimeBetweenShots -= Time.deltaTime;
         }
     }
 }
