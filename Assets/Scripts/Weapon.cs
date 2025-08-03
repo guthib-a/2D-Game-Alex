@@ -13,6 +13,17 @@ public class Weapon : MonoBehaviour
     private Camera cam;
     public float elapsedtime;
     public bool Attacking;
+
+    public BoxCollider2D weaponBoxCollider;
+
+    private void Awake()
+    {
+        if (weaponBoxCollider == null)
+        {
+            weaponBoxCollider = GetComponent<BoxCollider2D>();
+            weaponBoxCollider.isTrigger = true;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,42 +36,31 @@ public class Weapon : MonoBehaviour
         Attacking = false;
         PointToMouse();
         if (Input.GetMouseButton(0) && elapsedtime > 0.3)
-        {
-
+        { 
             elapsedtime = 0;
 
         }
         if (elapsedtime < 0.1)
         {
-             Attacking = true;
+            Attacking = true;
             Attack();
         }
 
-
         elapsedtime += Time.deltaTime;
-
     }
     public void PointToMouse()
     {
         
-            transform.position = Player.transform.position;
-        
- 
+        transform.position = Player.transform.position;
         rotate();
         transform.position += transform.right * rightDistanceFromPlayer;
         transform.position += transform.up * (0 - backDistanceFromPlayer);
-
         rotate();
     }
 
     public void Attack()
     {
-
-
         transform.position += transform.up * distanceFromPlayer * elapsedtime * 5;
-        
-
-        
     }
     public void rotate()
     {

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -8,8 +9,7 @@ public class EnemyDamage : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        
+        weapon = FindObjectOfType<Weapon>();
     }
 
     // Update is called once per frame
@@ -18,28 +18,14 @@ public class EnemyDamage : MonoBehaviour
 
     }
 
-    private void TriggerEnter2D(Collider2D collision)
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Weapon"))
+        if (collision.CompareTag("Weapon") && weapon.Attacking)
         {
-            Debug.Log("bbb");
-            if (weapon.Attacking == true)
-            {
-                Debug.Log("aaa");
+                Destroy(gameObject);
             }
         }
 
     }
-
-    private void OnCollisionEnter2D(Collision2D target)
-    {
-        if (target.gameObject.tag.Equals("Weapon"))
-        {
-            Debug.Log("bbb");
-            if (weapon.Attacking == true)
-            {
-                Debug.Log("aaa");
-            }
-        }
-    }
-}
+ 
