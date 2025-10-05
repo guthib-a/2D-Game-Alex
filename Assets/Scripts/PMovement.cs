@@ -1,9 +1,12 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PMovement : MonoBehaviour 
 {
+    public int health;
+    public GameObject inventory;
     public float DashSpeed;
     Vector2 MoveDir;
     Rigidbody2D PlayerRb;
@@ -52,7 +55,10 @@ public class PMovement : MonoBehaviour
             MoveSpeed = 7;
      
         }
-        
+        if (inventory.activeSelf)
+        {
+            MoveSpeed = 3;
+        }
             if (Input.GetKey(KeyCode.W))
             {
                 Ymove += 1;
@@ -101,5 +107,7 @@ public class PMovement : MonoBehaviour
 
 
     }
+
+   
 
 }
